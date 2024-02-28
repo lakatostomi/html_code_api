@@ -1,0 +1,12 @@
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/exception/UnsupportedElementException.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/exception/ConstructorInvocationException.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/RestWebServiceApplication.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/service/CodeService.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/dto/HtmlElementDTO.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/factory/HtmlElementFactory.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/exception/RequiredArgumentMissingException.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/ApiDocumentation.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/dto/ElementAttributeDTO.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/api/Controller.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/exception/handler/RestExceptionHandler.java
+/home/tamas/IdeaProjects/html_code_app/rest-api/src/main/java/com/example/demo/restapi/service/impl/HtmlCodeServiceImpl.java
