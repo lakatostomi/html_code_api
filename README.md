@@ -107,49 +107,54 @@ The API will be available at `http://localhost:8080`.
 
 ## 📡 API Endpoints
 
-### Add an element
+Interactive documentation is available at **`http://localhost:8080/swagger-ui.html`** (Swagger UI).
+
+### Add an HTML element
 ```
-POST /api/elements
+POST /api/rest/v1/codes
 ```
 
-Request body example (a heading):
+Request body (`HtmlElementDTO`):
 ```json
 {
-  "type": "h1",
-  "attribute": "class=\"title\"",
-  "content": "World Population Data"
+  "parentId": 0,
+  "name": "table",
+  "text": "My Table",
+  "elementAttributeDTO": {
+    "name": "border",
+    "value": "1"
+  }
 }
 ```
 
-Request body example (a table with children):
-```json
-{
-  "type": "table",
-  "attribute": "border=\"1\"",
-  "children": [
-    {
-      "type": "tr",
-      "children": [
-        { "type": "td", "content": "Country" },
-        { "type": "td", "content": "Year" },
-        { "type": "td", "content": "Population" }
-      ]
-    }
-  ]
-}
-```
+| Field | Type | Description |
+|---|---|---|
+| `parentId` | `int` | ID of the parent element; use `0` for top-level elements |
+| `name` | `String` | HTML element type — one of: `h1`, `p`, `a`, `table`, `tr`, `td` |
+| `text` | `String` | Text content of the element |
+| `elementAttributeDTO` | `Object` | Optional single attribute (`name` + `value` pair) |
 
-### Remove an element
-```
-DELETE /api/elements/{id}
-```
+**Responses:**
+
+| Code | Description |
+|---|---|
+| `201 Created` | Element saved successfully; returns the current list of `HtmlElement` objects |
+| `400 Bad Request` | Element type is not supported |
+| `404 Not Found` | Invalid `parentId` provided |
 
 ### Generate the HTML document
 ```
-GET /api/document
+GET /api/rest/v1/codes/save
 ```
 
-Returns the complete HTML page as a `text/html` String, with all saved elements assembled in order inside the `<body>`.
+Returns the complete HTML page as a `text/html` String, with all saved elements assembled inside the `<body>` in the order they were added.
+
+### Remove an element
+```
+DELETE /api/rest/v1/codes/delete/{id}
+```
+
+Removes the element with the given ID before the final document is generated.
 
 ---
 
